@@ -1,0 +1,33 @@
+digraph Tree {
+node [shape=box, style="filled, rounded", color="black", fontname=helvetica] ;
+edge [fontname=helvetica] ;
+0 [label=<Age &le; 54.5<br/>gini = 0.666<br/>samples = 7000<br/>value = [2243, 2428, 2329]<br/>class = Wine Expert>, fillcolor="#fbfefc"] ;
+1 [label=<Dryred &le; 58.5<br/>gini = 0.515<br/>samples = 4247<br/>value = [2196, 70, 1981]<br/>class = Wine Explorer>, fillcolor="#fdf3ec"] ;
+0 -> 1 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
+2 [label=<Dryred &le; 51.5<br/>gini = 0.207<br/>samples = 2384<br/>value = [2112, 62, 210]<br/>class = Wine Explorer>, fillcolor="#e89152"] ;
+1 -> 2 ;
+3 [label=<gini = 0.102<br/>samples = 2037<br/>value = [1929, 49, 59]<br/>class = Wine Explorer>, fillcolor="#e68844"] ;
+2 -> 3 ;
+4 [label=<gini = 0.531<br/>samples = 347<br/>value = [183, 13, 151]<br/>class = Wine Explorer>, fillcolor="#fbeadf"] ;
+2 -> 4 ;
+5 [label=<Dryred &le; 64.5<br/>gini = 0.094<br/>samples = 1863<br/>value = [84, 8, 1771]<br/>class = Red Lover>, fillcolor="#8843e6"] ;
+1 -> 5 ;
+6 [label=<gini = 0.353<br/>samples = 287<br/>value = [63, 2, 222]<br/>class = Red Lover>, fillcolor="#a672ed"] ;
+5 -> 6 ;
+7 [label=<gini = 0.034<br/>samples = 1576<br/>value = [21, 6, 1549]<br/>class = Red Lover>, fillcolor="#833ce5"] ;
+5 -> 7 ;
+8 [label=<Dryred &le; 72.5<br/>gini = 0.25<br/>samples = 2753<br/>value = [47, 2358, 348]<br/>class = Wine Expert>, fillcolor="#5ae996"] ;
+0 -> 8 [labeldistance=2.5, labelangle=-45, headlabel="False"] ;
+9 [label=<Perdeal &le; 15.5<br/>gini = 0.157<br/>samples = 2461<br/>value = [47, 2253, 161]<br/>class = Wine Expert>, fillcolor="#4be78c"] ;
+8 -> 9 ;
+10 [label=<gini = 0.044<br/>samples = 2073<br/>value = [6, 2026, 41]<br/>class = Wine Expert>, fillcolor="#3ee684"] ;
+9 -> 10 ;
+11 [label=<gini = 0.551<br/>samples = 388<br/>value = [41, 227, 120]<br/>class = Wine Expert>, fillcolor="#b0f5cd"] ;
+9 -> 11 ;
+12 [label=<Perdeal &le; 5.5<br/>gini = 0.461<br/>samples = 292<br/>value = [0, 105, 187]<br/>class = Red Lover>, fillcolor="#c8a8f4"] ;
+8 -> 12 ;
+13 [label=<gini = 0.344<br/>samples = 104<br/>value = [0, 81, 23]<br/>class = Wine Expert>, fillcolor="#71eca5"] ;
+12 -> 13 ;
+14 [label=<gini = 0.223<br/>samples = 188<br/>value = [0, 24, 164]<br/>class = Red Lover>, fillcolor="#9356e9"] ;
+12 -> 14 ;
+}

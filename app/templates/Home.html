@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <title>Home</title>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta name="theme-color" content="#478ac9">
+  </head>
+
+  <body>
+    <image src = "{{ url_for('static', filename='images/Nova-IMS-1024x1024.jpg') }}" class = "image-logo" style="width:48px;height:48px;"></image>
+    <div class="mainpage">
+      <h1>Predict customer segment</h1>
+      <form action="predict" method="POST">             
+          <input type="text" placeholder="Enter customer data in csv format" name="data" class ="input1" required="required"/>
+          <button type="submit" value="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+      </form>
+    </div>
+    <br>
+    <br>
+    <div class="u-textprediction">
+      <p style="text-align:left; margin-left: 60px;font-size: 20px; font-weight: bold;">{{ prediction_text }}</p>
+    </div>
+    <br>
+    <section class="indent-1">
+      <!-- Section 1 --> 
+      <section>
+        <div class="profile">
+          <h1 style="text-align:left; margin-left: 60px;">Customer segment profile</h1>
+          {% for line in profile_text %}
+            <p style="text-align:left; margin-left: 80px;">{{ line }}</p>
+          {% endfor %}
+        </div>
+      </section> 
+      <br>
+      <section>
+        <div class="profile">
+          <h1 style="text-align:left; margin-left: 60px;">Suggested marketing approaches</h1>
+          {% for line in marketing_text %}
+            <p style="text-align:left; margin-left: 80px;">{{ line }}</p>
+          {% endfor %}
+        </div>
+      </section> 
+    </section> 
+
+    <section class="indent-1">
+      <!-- Section 2 --> 
+      <img src="data:image/png;base64,{{ radar }}" style="width:800px;height:500px;"/>
+
+    </section>
+    
+  </body>
+</html>
+
